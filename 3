@@ -1,0 +1,46 @@
+Arrow Functions
+Arrow functions allow us to write shorter function syntax:
+
+Example 
+hello = function() {
+  return "Hello World!";
+}
+
+The handling of this is also different in arrow functions compared to regular functions.
+
+In short, with arrow functions there is no binding of this.
+
+In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions, the this keyword always represents the object that defined the arrow function.
+
+Let us take a look at two examples to understand the difference.
+
+Both examples call a method twice, first when the page loads, and once again when the user clicks a button.
+
+The first example uses a regular function, and the second example uses an arrow function.
+
+The result shows that the first example returns two different objects (window and button), and the second example returns the Header object twice
+
+Variables
+Before ES6 there was only one way of defining your variables: with the var keyword. If you did not define them, they would be assigned to the global object. Unless you were in strict mode, then you would get an error if your variables were undefined.
+
+Now, with ES6, there are three ways of defining your variables: var, let, and const.
+
+If you use var outside of a function, it belongs to the global scope.
+
+If you use var inside of a function, it belongs to that function.
+
+If you use var inside of a block, i.e. a for loop, the variable is still available outside of that block.
+
+var has a function scope, not a block scope.
+
+let is the block scoped version of var, and is limited to the block (or expression) where it is defined.
+
+If you use let inside of a block, i.e. a for loop, the variable is only available inside of that loop.
+
+let has a block scope.
+
+const is a variable that once it has been created, its value can never change.
+
+const has a block scope.
