@@ -1,0 +1,55 @@
+Props
+Components can be passed as props, which stands for properties.
+
+Props are like function arguments, and you send them into the component as attributes.
+
+You will learn more about props in the next chapter.
+
+Example
+Use an attribute to pass a color to the Car component, and use it in the render() function:
+
+function Car(props) {
+  return <h2>I am a {props.color} Car!</h2>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car color="red"/>);
+
+
+Components in Components
+We can refer to components inside other components:
+
+Example
+Use the Car component inside the Garage component:
+
+function Car() {
+  return <h2>I am a Car!</h2>;
+}
+
+function Garage() {
+  return (
+    <>
+      <h1>Who lives in my Garage?</h1>
+      <Car />
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
+
+Components in Files
+React is all about re-using code, and it is recommended to split your components into separate files.
+
+To do that, create a new file with a .js file extension and put the code inside it:
+
+Note that the filename must start with an uppercase character.
+
+Example
+This is the new file, we named it "Car.js":
+
+function Car() {
+  return <h2>Hi, I am a Car!</h2>;
+}
+
+export default Car;
