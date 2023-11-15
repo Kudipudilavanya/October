@@ -1,0 +1,37 @@
+Implementing Item Deletion:
+
+Add a delete button to each item in the list and implement functionality to remove items.
+
+jsx
+Copy code
+// ... (previous code)
+
+function App() {
+  // ... (previous code)
+
+  const deleteItem = (id) => {
+    setItems(items.filter((item) => item.id !== id));
+  };
+
+  return (
+    <div className="App">
+      <h1>React Sample Program</h1>
+      <form>
+        {/* ... (previous code) */}
+      </form>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>
+            {item.name}
+            <button type="button" onClick={() => deleteItem(item.id)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+Now, each item in the list has a delete button, and clicking it will remove the corresponding item.
