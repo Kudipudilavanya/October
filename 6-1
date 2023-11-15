@@ -1,0 +1,46 @@
+Adding a Form to Add Items:
+
+Modify src/App.js to include a form that allows you to add new items to the list.
+
+ import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [items, setItems] = useState([
+    { id: 1, name: 'Item 1' },
+    { id: 2, name: 'Item 2' },
+    { id: 3, name: 'Item 3' },
+  ]);
+
+  const [newItem, setNewItem] = useState('');
+
+  const addItem = () => {
+    if (newItem) {
+      setItems([...items, { id: items.length + 1, name: newItem }]);
+      setNewItem('');
+    }
+  };
+
+  return (
+    <div className="App">
+      <h1>React Sample Program</h1>
+      <form>
+        <input
+          type="text"
+          value={newItem}
+          onChange={(e) => setNewItem(e.target.value)}
+        />
+        <button type="button" onClick={addItem}>
+          Add Item
+        </button>
+      </form>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
